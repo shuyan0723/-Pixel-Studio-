@@ -1,0 +1,55 @@
+# 弹跳球动画示例 —— 演示「复制帧 + 微调」这个做动画的标准套路
+#
+# 核心思路：画好第一帧之后，每一帧都是「复制上一帧，然后把球挪一点点」。
+# 一共 8 帧，frame 1 在最左，frame 8 在最右，循环播放就是一个来回。
+
+new 弹跳球 24 12
+
+# ---- 第 1 帧：球在左边地上 ----
+color gray
+fill 0 11 24 1
+color red
+disc 3 8 2
+
+# ---- 第 2~9 帧：每帧往上再往右挪一点，碰到顶就往下走 ----
+copy
+clear
+fill 0 11 24 1
+disc 5 6 2
+
+copy
+clear
+fill 0 11 24 1
+disc 7 4 2
+
+copy
+clear
+fill 0 11 24 1
+disc 9 3 2
+
+copy
+clear
+fill 0 11 24 1
+disc 11 3 2
+
+copy
+clear
+fill 0 11 24 1
+disc 13 4 2
+
+copy
+clear
+fill 0 11 24 1
+disc 15 6 2
+
+copy
+clear
+fill 0 11 24 1
+disc 17 8 2
+
+fps 10
+loop on
+info
+frames
+export out/bouncing-ball.bmp
+quit

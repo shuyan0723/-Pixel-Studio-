@@ -1,0 +1,22 @@
+# 冒烟测试脚本：每行一条命令，用来验证程序能不能完整跑通
+new 冒烟测试 44 18
+color cyan
+fill 0 0 44 1
+text 2 5 "PIXEL" yellow
+disc 12 12 6 red
+circle 12 12 8 lime
+rect 22 6 18 10 blue
+fill 24 8 14 1 cyan
+copy
+clear
+color pink
+text 22 10 "JAVA" pink
+save out/smoke.pxs
+export out/smoke.txt
+export out/smoke.ppm
+info
+frames
+fps 12
+loop on
+show --ruler
+quit

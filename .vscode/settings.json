@@ -1,0 +1,38 @@
+{
+  // 让 Java 语言服务器用 Temurin 17，和 Maven、命令行保持一致。
+  // 不写的话它可能自己去找别的 JDK，导致「能编译但编辑器报红」。
+  "java.configuration.runtimes": [
+    {
+      "name": "JavaSE-17",
+      "path": "C:\\Program Files\\Eclipse Adoptium\\jdk-17.0.20.101-hotspot",
+      "default": true
+    }
+  ],
+
+  // 本项目有大量中文注释和输出，编码必须是 UTF-8，否则会乱码
+  "files.encoding": "utf8",
+  "files.autoGuessEncoding": false,
+
+  // 用官方格式化器，保存时自动排版
+  "[java]": {
+    "editor.defaultFormatter": "redhat.java",
+    "editor.formatOnSave": true,
+    "editor.rulers": [120]
+  },
+
+  // 只读文件里的 exclude 注释是给作者看的，测试的 @DisplayName 也要显示
+  "files.exclude": {
+    "**/target": true,
+    "**/out": true
+  },
+
+  "files.watcherExclude": {
+    "**/target/**": true,
+    "**/out/**": true
+  },
+
+  // 编译产物会不停变，排除掉能省 CPU 和索引时间
+  "search.exclude": {
+    "**/target": true
+  }
+}

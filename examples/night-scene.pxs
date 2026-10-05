@@ -1,0 +1,72 @@
+# 夜景示例 —— 把所有绘图命令用在一起
+# 跑法： java -cp target/classes com.pixelstudio.PixelStudioApp examples/night-scene.pxs
+
+new 夜晚的小屋 60 20
+
+# ── 地面 ──
+color olive
+fill 0 15 60 5
+
+# ── 月亮 ──
+color yellow
+disc 50 3 2
+
+# ── 星星（随手动几个）──
+color white
+set 6 2
+set 14 5
+set 22 1
+set 30 4
+set 38 2
+set 45 6
+set 55 9
+set 3 9
+set 35 8
+
+# ── 远处的山 ──
+color gray
+line 12 5 0 15 gray
+line 12 5 26 15 gray
+line 12 5 4 15 gray
+line 12 5 22 15 gray
+
+color x
+line 38 7 28 15 x
+line 38 7 50 15 x
+line 38 7 33 15 x
+line 38 7 46 15 x
+
+# ── 小屋 ──
+color white
+fill 18 10 13 5 white
+color red
+line 24 5 17 10 red
+line 24 5 32 10 red
+line 24 5 20 10 red
+line 24 5 29 10 red
+line 17 10 32 10 red
+fill 18 10 13 1 red
+
+# 门
+color brown
+fill 23 12 3 3 brown
+# 窗户
+color cyan
+fill 19 11 2 2 cyan
+fill 28 11 2 2 cyan
+
+# ── 树 ──
+color brown
+fill 43 12 2 3 brown
+color green
+disc 44 10 4 green
+disc 44 9 2 lime
+
+# ── 存盘 + 导出 ──
+rename 夜晚的小屋
+fps 1
+export out/scene.txt
+export out/scene.bmp
+save out/scene.pxs
+info
+quit

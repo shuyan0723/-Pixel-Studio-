@@ -1,0 +1,27 @@
+# 统一换行符。规则：
+#   * text=auto  让 git 自动判断哪些是文本文件
+#   text=lf     这些文件在仓库里一律存 LF
+#   *.java text eol=lf     Windows 上检出时也用 LF
+#
+# 为什么要管这事？
+# 不加这个文件，Windows 上 git 会把仓库里的 LF 自动转成 CRLF 存回工作区。
+# 后果是：明明一行没改，`git status` 却显示一堆文件被修改了。
+# 对一个要长期积累学习记录的项目，这种"假改动"很烦人。
+
+* text=auto
+
+*.java        text eol=lf
+*.xml         text eol=lf
+*.json        text eol=lf
+*.md          text eol=lf
+*.pxs         text eol=lf
+*.txt         text eol=lf
+.gitignore    text eol=lf
+.gitattributes text eol=lf
+
+# 图片和字体是二进制，不能做任何转换
+*.bmp   binary
+*.ppm   binary
+*.png   binary
+*.jpg   binary
+*.jar   binary

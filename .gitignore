@@ -1,0 +1,19 @@
+# 构建产物
+target/
+
+# 运行时生成的输出（自己画的图、导出的图片都在这里）
+out/
+
+# IDE
+.idea/
+*.iml
+.classpath
+.project
+.settings/
+
+# .vscode/ 不整体忽略 —— 里面的 settings.json 是项目必需的（UTF-8 + JDK 版本）
+# 但个人相关的 launch.json 之类还是别提交
+.vscode/*
+!.vscode/settings.json
+
+# 注意：examples/*.pxs 是项目自带的示例脚本，不能忽略

@@ -1,0 +1,15 @@
+# 小幽灵示例 —— 演示基本图形和颜色的组合
+new 幽灵 24 14
+color white
+disc 12 6 5 white
+fill 7 6 11 6 white
+color black
+set 9 5
+set 10 5
+set 14 5
+set 15 5
+set 11 8
+set 12 8
+export out/ghost.txt
+export out/ghost.bmp
+quit
